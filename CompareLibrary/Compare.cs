@@ -89,27 +89,5 @@ namespace CompareLibrary
                     secondPath.Status = status[2];
         }
 
-        // TODO: DELETE
-        public void Print()
-        {
-            foreach (var item in firstDir)
-            {
-                Console.WriteLine(item.Name + " " +
-                                  item.Size + " " +
-                                  item.LastModified + " " +
-                                  item.Status);
-            }
-
-            Console.WriteLine(new String('-', 80));
-
-            foreach (var item in secondDir)
-            {
-                Console.WriteLine(item.Name + " " +
-                                  item.Size + " " +
-                                  item.LastModified + " " +
-                                  item.Status);
-            }
-        }
-
     }
 }
