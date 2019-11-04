@@ -5,74 +5,89 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CompareDirectories"
         mc:Ignorable="d"
-        Title="Comparator" Height="457" Width="1024">
-    <Grid Background="#eff7ea" Margin="0,0,0,0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="470*"/>
-            <ColumnDefinition Width="17*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="Путь к первой папке:" HorizontalAlignment="Left" Margin="32,15,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.467,-1" Click="Button_Click" Background="#ebf3db" Height="30" ScrollViewer.HorizontalScrollBarVisibility="Auto" MinWidth="154"/>
-        <Button Grid.Row="0" Content="Путь ко второй папке:" HorizontalAlignment="Left" Margin="510,15,0,0" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.467,-1" Click="Button_Click1" Background="#ebf3db" Height="30" MinWidth="156"/>
-        <TextBox Grid.Row="0" Name="firstDirTxtBox" HorizontalAlignment="Left" Height="30" Margin="191,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="299" TextChanged="TextBox_TextChanged" MinWidth="280" VerticalContentAlignment="Center"/>
-        <TextBox Grid.Row="0" Name="secondDirTxtBox" HorizontalAlignment="Left" Height="30" Margin="672,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="309" VerticalContentAlignment="Center" />
-        <Button Grid.Row="0" Content="Сравнить директории" HorizontalAlignment="Left" Margin="357,371,0,0" VerticalAlignment="Top" Width="285" Click="Button_Click_1" Background="#ebf3db" Height="30"/>
-        <DataGrid
-            AutoGenerateColumns="False" Height="299" 
-            ColumnHeaderHeight="30"
-            HeadersVisibility="Column" 
-            x:Name="dataGridFirstDir" 
-            Background="White"
-            HorizontalGridLinesBrush="DarkGray" 
-            RowBackground="#d8dfbb" 
-            AlternatingRowBackground="White" 
-            Margin="32,61,0,0" Width="458" 
-            Grid.IsSharedSizeScope="True" 
-            VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" VerticalAlignment="Top"
-            >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="50" />
-                <DataGridTextColumn Header="Размер" Binding="{Binding Size}" MinWidth="50" />
-                <DataGridTextColumn Header="Дата изменения" Binding="{Binding LastModified}" MinWidth="50" />
-                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" MinWidth="50" />
-            </DataGrid.Columns>
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Size}" />
-                        <TextBlock Text=" размер в байтах" />
-                    </StackPanel>
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
-        </DataGrid>
-        <DataGrid
-            AutoGenerateColumns="False" Height="299" 
-            ColumnHeaderHeight="30"
-            HeadersVisibility="Column" 
-            x:Name="dataGridSecondDir" 
-            Background="White"
-            HorizontalGridLinesBrush="DarkGray" 
-            RowBackground="#d8dfbb" 
-            AlternatingRowBackground="White" 
-            Margin="510,61,0,0" Width="471" 
-            Grid.IsSharedSizeScope="True" 
-            VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="50" />
-                <DataGridTextColumn Header="Размер" Binding="{Binding Size}" MinWidth="50" />
-                <DataGridTextColumn Header="Дата изменения" Binding="{Binding LastModified}" MinWidth="50" />
-                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" MinWidth="50" />
-            </DataGrid.Columns>
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Size}" />
-                        <TextBlock Text=" размер в байтах" />
-                    </StackPanel>
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
-        </DataGrid>
-    </Grid>
+        Title="Comparator" 
+        Height="500" 
+        Width="1240">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" 
+                  VerticalScrollBarVisibility="Auto">
+        <Grid Background="#eff7ea" 
+              Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Content="Путь к первой папке:" HorizontalAlignment="Center" Margin="64,34,854,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.467,-1" Click="Button_Click" Background="#ebf3db" Height="30" ScrollViewer.HorizontalScrollBarVisibility="Auto" MinWidth="154"/>
+            <TextBox Grid.Row="0" Name="firstDirTxtBox" HorizontalAlignment="Center" Height="30" Margin="223,34,549,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" />
+            <TextBox Grid.Row="0" Name="secondDirTxtBox" HorizontalAlignment="Center" Height="30" Margin="711,34,52,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="309" VerticalContentAlignment="Center" />
+            <Button Grid.Row="0" Content="Сравнить директории" HorizontalAlignment="Center" Margin="515,0,512,29" VerticalAlignment="Bottom" Click="Button_Click_1" Background="#ebf3db" RenderTransformOrigin="0.549,1.9" Width="205" Height="30"  />
+            <Button Grid.Row="0" Content="Путь ко второй папке:" HorizontalAlignment="Center" Margin="550,34,366,0" VerticalAlignment="Top" RenderTransformOrigin="0.467,-1" Click="Button_Click1" Background="#ebf3db" Height="30" MinWidth="156"/>
+            <DataGrid
+                AutoGenerateColumns="False" 
+                ColumnHeaderHeight="30"
+                HeadersVisibility="Column" 
+                x:Name="dataGridFirstDir" 
+                Background="White"
+                HorizontalGridLinesBrush="#122400" 
+                RowBackground="#d8dfbb" 
+                AlternatingRowBackground="White" 
+                Margin="64,85,549,81" 
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                MinHeight="303"  Height="{Binding ActualHeight, 
+                RelativeSource ={RelativeSource AncestorType = {x:Type Window}}}" Width="459">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="50" />
+                    <DataGridTextColumn Header="Размер" Binding="{Binding Size}" MinWidth="50" />
+                    <DataGridTextColumn Header="Дата изменения" Binding="{Binding LastModified}" MinWidth="50" />
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" MinWidth="50" />
+                </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Size}" />
+                            <TextBlock Text=" размер в байтах" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
+            <DataGrid
+                AutoGenerateColumns="False"
+                ColumnHeaderHeight="30"
+                HeadersVisibility="Column" 
+                x:Name="dataGridSecondDir" 
+                Background="White"
+                HorizontalGridLinesBrush="#122400" 
+                RowBackground="#d8dfbb" 
+                AlternatingRowBackground="White" 
+                Margin="550,85,52,81"
+                Grid.IsSharedSizeScope="True" 
+                VerticalScrollBarVisibility="Auto" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Stretch"
+                MinHeight="303"  
+                Height="{Binding ActualHeight, 
+                RelativeSource ={RelativeSource AncestorType = {x:Type Window}}}" 
+                Width="470">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Name}" MinWidth="50" />
+                    <DataGridTextColumn Header="Размер" Binding="{Binding Size}" MinWidth="50" />
+                    <DataGridTextColumn Header="Дата изменения" Binding="{Binding LastModified}" MinWidth="50" />
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" MinWidth="50" />
+                </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Size}" />
+                            <TextBlock Text=" размер в байтах" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
+        </Grid>
+    </ScrollViewer>
 </Window>
